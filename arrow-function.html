@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        // Arrow function adalah alternatif pembuatan function yang lebih sederhana dari function biasanya
+        // Namun terdapat limitasi dan juga tidak bisa digunakan di semua situasi
+        // Dinamakan arrow function karena menggunakan tanda => (seperti panah)
+        // Berikut contoh beberapa kekurangan arrow function:
+            // -tidak memiliki fitur arguments object
+            // -tidak bisa menggunakan function generator
+            // -tidak bisa mengakses this (yang nanti akan dibahas di function object)
+            // -tidak bisa mengakses super (yang nanti akan dibahas di JavaScript Object Oriented Programming)
+
+            const sayHello = (name) => {
+                const say = `Hello ${name}`;
+                console.log(say);
+            }
+
+            // Cara mengakses arrow function tinggal memanggil variable nya
+            sayHello("Faiz");
+
+
+            const sayHellow = (name) => `Hellow ${name}`;
+            console.log(sayHellow("Anggie"));
+
+        // ARROW FUNCTION TANPA BLOCK
+        // Jika sebuah arrow function isinya sederhana, misal hanya satu bari
+        // Kita bisa membuat arrow function tanpa harus menggunakan block
+
+        // const sayHello = (name) => console.log(`Hellow ${name}`);
+
+        // arrow function dengan hanya 1 parameter /  tanpa parameter
+        // const sayHello = name => console.log(`Hellow ${name}`);
+        // sayHello("Ahmad")
+        /* MUEHEHE */
+
+        // arrow function return value
+        // const sum = (first, second) => {
+        //     return first + second;
+        // }
+
+        // arrow return value tanpa block
+        const sum = (first, second) => first + second;
+
+        console.log(sum(100, 100));
+
+
+
+
+        // ARROW FUNCTION SEBAGAI PARAMETER
+        function giveMeName(callbacks){
+            callbacks("Ahmad");
+        }
+
+        // Anonymous Function
+        giveMeName(function (name){
+            console.log(`Hello ${name}`)
+        });
+
+        // Arrow Function
+        giveMeName(name => console.log(`Hello ${name}`)); 
+        
+    </script>
+</body>
+</html>

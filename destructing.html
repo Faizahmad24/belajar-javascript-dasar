@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // Destructing adalah fitur yang bisa digunakan untuk membongkar value-value di array atau object ke dalam variable-variable
+      // Fitur ini sangat mempermudah kita ketika ingin mengambil data dari array atau object tanpa harus melakukan pengambilan data satu persatu
+
+      {
+        // DESTRUCTURING ARRAY
+        const names = ['Ahamd', 'Faiz', 'Finna', 'Yenny', 'Harfayola']
+        // const firstName = names[0];
+        // const middleName = names[1];
+        // const lastName = names[2];
+        let [firstName, middleName, lastName, fourthName, ...others] = names
+
+        console.log(firstName)
+        console.log(middleName)
+        console.log(lastName)
+        console.log(fourthName)
+        console.log(others)
+      }
+
+      {
+        // DESTRUCTURING OBJECT
+        const person = {
+          firstName: 'Ahmad',
+          lastName: 'Faiz',
+          address: {
+            street: 'Jalan Mana Kek',
+            city: 'Jakarta',
+            country: 'Indonesia',
+          },
+          hobby: 'Game',
+          channel: 'Programmer Zaman Now',
+        }
+
+        let {
+          firstName,
+          lastName,
+          address: { city, street, country },
+          ...others
+        } = person
+        console.log(firstName)
+        console.log(lastName)
+        console.log(city)
+        console.log(street)
+        console.log(country)
+        console.log(others)
+      }
+
+      {
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.log(person.firstName)
+          console.log(person.middleName)
+          console.log(person.lastName)
+        }
+
+        const person = {
+          firstName: 'Ahmad',
+          middleName: 'Faiz',
+          lastName: 'Finna',
+        }
+        displayPerson(person)
+      }
+
+      {
+        function sum([first, second]) {
+          return first + second
+        }
+
+        console.log(sum([2, 3]))
+      }
+
+      // DEFAULT VALUE
+      // Yang paling menarik di detructuring adalah, kita bisa menambahkan defaut value
+      // Jadi misal kita melakukan destructuring terhadap array, ternyata tidak ada datanya, maka kita bisa menambahkan default value
+      // Begitu juga pada object, jika ternyata property nya tidak ada, maka kita bisa menambahkan default value
+
+      {
+        const names = ['Ahmad']
+        const [firstName, middleName = 'Faiz', lastName = 'Finna'] = names
+
+        console.log(firstName)
+        console.log(middleName)
+        console.log(lastName)
+      }
+
+      {
+        const person = {
+          firstName: 'Ahmad',
+          lastName: 'Faiz',
+        }
+
+        let { firstName, middleName = 'Finna', lastName } = person
+        console.log(firstName)
+        console.log(middleName)
+        console.log(lastName)
+      }
+
+      {
+        const person = {
+          firstName: 'Ahmad',
+          middleName: 'Tengah',
+          lastName: 'Faiz',
+        }
+
+        let {
+          firstName: namaDepan,
+          middleName: namaTengah = 'Finna',
+          lastName: namaBelakang,
+        } = person
+        console.log(namaDepan)
+        console.log(namaTengah)
+        console.log(namaBelakang)
+      }
+    </script>
+  </body>
+</html>

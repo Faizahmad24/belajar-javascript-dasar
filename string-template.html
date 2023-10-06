@@ -1,0 +1,40 @@
+<!-- STRING TEMPLATE -->
+<!-- Kita sudah tahu bahwa untuk menambahkan string dengan data lain, kita bisa menggunakan operator + (plus) -->
+<!-- Namun pada kasus tertentu, penggunaann operator + (plus) sangat menyulitkan, apalagi jika dalam jumlah banyak -->
+<!-- Javascript memiliki fitur yang bernama String Template, dimana kita bisa mensubtitutsi data dari luar string ke dalam string, seperti mengambil data variable, atau bahkan melakukan operasi matematika -->
+<!-- untuk menggunakam String template, cara pembuatan String nya haru smenggunakan ` (backtik), bukan petik ' (petika satu) atau " (petik dua) -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        const name = "Ahmad Faiz"
+        const template = `Name : ${name}`
+        console.log(template)
+
+        // Contoh Expressiondi string template
+        const nilai = 90;
+        const template2 = `Name : ${name}, Lulus : ${nilai > 70}`;
+        console.log(template2)
+
+        // multiline string
+
+        const multiline = `Nama saya Faiz,
+        Sekarang saya kerja,
+        Sering juga bikin konten programming,
+        Kalo lagi malas, ya tetp ngoding`;
+
+        document.writeln("<pre>")
+        document.writeln(multiline)
+        document.writeln("</pre>")
+    </script>
+</body>
+</html>

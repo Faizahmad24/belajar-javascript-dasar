@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        // Function generator adalah function yang digunakan untuk membuat data generator
+        // Generator adalah data yang bisa di interasi seperti array
+        // Untuk membuat function generator, kita perlu menggunakan tanda * (bintang) setelah kata function
+        // Dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci yield diikuti datanya
+        // Generator data nya hanya bisa dikeluarkan dengan iterasi tidak bisa dikeluarkan hanya by index tertentu
+
+        function* createNames(){
+            yield "Ahmad";
+            yield "Faiz";
+        } 
+
+        const names = createNames();
+        // console.log(names[0]);
+
+        for (const name of names) {
+            console.log(name);
+        }
+
+        // Lazy
+        function* buatGanjil(value){
+             for (let i = 0; i <= value; i++) {
+                if(i % 2 === 1){
+                    console.log(`Yield ${i}`);
+                    yield i;
+                }
+             }
+        }
+
+        // Eager
+        function buatGanjilArray(value){
+            const result = [];
+             for (let i = 1; i <= value; i++) {
+                if(i % 2 === 1){
+                    console.log(`Yield ${i}`);
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+
+        const numbers = buatGanjilArray(100);
+        for (const number of numbers){
+            console.log(number)
+        }
+
+        // console.log(numbers.next().value);
+
+
+        // LAZY EVALUATION
+        // Genarator itu sifatnya lazy
+        // Jadi artinya jika datanya belum kita ambil dari generator, maka yield selanjutnyatidak akan di eksekusi
+        
+        
+    </script>
+</body>
+</html>

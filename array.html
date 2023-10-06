@@ -1,0 +1,49 @@
+<!-- Operasi di Array -->
+<!-- array.push(value) Untuk menambah data ke array -->
+<!-- array.length Untuk mendapatkan panjang array -->
+<!-- array[index] Untuk mendapatkan data di posisi index -->
+<!-- array[index] = value Mengubah data di posisi index -->
+<!-- delete array[index] Untuk menghapus data di posisi index, namun index tidak bergeser -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let arrayKosong = [];
+        let arrayNama = ["Ahmad", "Faiz"];
+
+        // Cara menambah data array di Javascript
+        const names = [];
+        names.push("Ahmad");
+        names.push("Faiz");
+        names.push("Finna");
+        names.push("Harfayola");
+
+
+        console.table(names);
+        console.log(names[0]);
+        console.log(names[1]);
+        console.log(names[2]);
+
+        names[0] = "Programmer"
+        console.table(names);
+
+        // Menghapus data index array
+        delete names[2];
+        console.table(names);
+
+        names[2] = "Diubah Faiz dan Finna lagi";
+        // Menambahkan array di dalam array
+        names.push(["Ahmad", "Faiz"]);
+        console.table(names);
+
+    </script>
+</body>
+</html>
