@@ -1,0 +1,2 @@
+Ini adalah file3.txt
+Seharusnya masih ada baris 2
