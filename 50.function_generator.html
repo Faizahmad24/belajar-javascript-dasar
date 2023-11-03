@@ -36,6 +36,12 @@
              }
         }
 
+        const numbersBuatGanjil = buatGanjil(100);
+        console.log(numbersBuatGanjil.next().value);
+        for (const number of numbersBuatGanjil) {
+            console.log(number)
+        }
+
         // Eager
         function buatGanjilArray(value){
             const result = [];
@@ -53,7 +59,6 @@
             console.log(number)
         }
 
-        // console.log(numbers.next().value);
 
 
         // LAZY EVALUATION

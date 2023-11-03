@@ -15,14 +15,17 @@
         // Di bahasa pemrograman lain, ada juga yang bilang ini adalah variable argument
 
         function sum(name, ...data){
+            console.log(data)
             let total = 0;
             for (const item of data){
                 total += item;
+                console.log(total)
             }
             document.writeln(`<p>Total ${name} is ${total}</p>`);
         }
 
         sum("Orange", 1, 2, 3, 4);
+        sum("Orange", "aa","bb", "cc");
 
         // Spread Syntax
         const value = [10, 10, 10, 10, 10];

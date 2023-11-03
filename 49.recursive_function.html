@@ -15,6 +15,7 @@
             let result = 1;
             for (let i = 1 ; i<= value; i++){
                 result *= i;//  1, 2, 6, 24, 
+                // console.log(result)
             } 
             return result;
         }
@@ -29,6 +30,7 @@
             } else {
                 return value * factorialRecursive(value - 1);
             }
+            // console.log(value)
         }
 
         console.log(factorialRecursive(5));
