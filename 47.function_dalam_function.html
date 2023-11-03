@@ -17,15 +17,17 @@
 
         function outer(){
 
-            function inner(){
+            function inner(num1, num2){
+                let result = num1 + num2;
+                document.writeln(`<p>Ini Hasil Penjumlahan ${num1} + ${num2} = ${result}</p>`)
                 console.log("Inner")
             }
-            inner();
-            inner();
+            inner(2, 2);
+            // inner();
 
         }
         outer();
-        inner();
+        inner(); //Error Can Not Access Function
 
 
     </script>
